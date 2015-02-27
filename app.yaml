@@ -1,0 +1,46 @@
+version: dev-v2
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /bower_components
+  static_dir: web/dist/bower_components
+- url: /elements
+  static_dir: web/dist/elements
+- url: /images
+  static_dir: web/dist/images
+- url: /scripts
+  static_dir: web/dist/scripts
+- url: /styles
+  static_dir: web/dist/styles
+
+- url: /(.*)
+  static_files: web/dist/index.html
+  upload: web/dist/index.html
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+
+- ^(web/app/.*)
+- ^(web/bower_components/.*)
+- ^(web/node_modules/.*)
+
+- ^(.*/)?.*\.md$
+- ^(.*/)?.*LICENSE$
+- ^(.*/)?.*COPYING$
+
+- ^(.*/)?(bower\.json)$
+- ^(.*/)?(gulpfile\.js)$
+- ^(.*/)?(package\.json)$
+- ^(.*/)?(wtc\.conf\.js)$
+
+
+
+
+
+
